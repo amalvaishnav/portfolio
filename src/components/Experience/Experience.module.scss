@@ -1,0 +1,224 @@
+.experience {
+  padding: var(--space-3xl) var(--gutter);
+  overflow-x: clip; // the winding trail must never cause sideways scroll
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: var(--space-xl);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-2xs);
+  color: var(--accent-ink);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--step-4);
+  letter-spacing: -0.01em;
+
+  em {
+    color: var(--accent-ink);
+  }
+}
+
+// The path: a vertical list of stops. Phones: token rail on the left.
+// Wide screens: cards alternate either side of a central rail.
+.path {
+  --gap: var(--space-xl);
+  --token: 3rem;
+  display: grid;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stop {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  column-gap: var(--space-s);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+
+  &[data-reveal='hidden'] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+
+  @media (min-width: 52rem) {
+    grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
+    column-gap: var(--space-m);
+
+    .rail {
+      grid-column: 2;
+    }
+
+    .card {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &:nth-child(even) .card {
+      grid-column: 3;
+    }
+  }
+}
+
+.rail {
+  position: relative;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+// Dotted trail from this token down to the next one; even stops mirror the bend
+.trail {
+  position: absolute;
+  top: calc(var(--token) / 2);
+  left: 50%;
+  width: 3.5rem;
+  height: calc(100% + var(--gap));
+  transform: translateX(-50%);
+  overflow: visible;
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-opacity: 0.5;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 0.1 12;
+  pointer-events: none;
+
+  @media (min-width: 52rem) {
+    width: 6rem;
+  }
+
+  .stop:nth-child(even) & {
+    transform: translateX(-50%) scaleX(-1);
+  }
+}
+
+.token {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--token);
+  height: var(--token);
+  border-radius: 50%;
+  border: 0.2rem solid var(--bg);
+  box-shadow: var(--shadow-m);
+  color: #3b2a26; // fixed dark ink keeps AA contrast on the light token colors
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 700;
+  transition: transform 0.4s var(--ease-bounce);
+
+  .stop:hover & {
+    transform: rotate(-10deg) scale(1.12);
+  }
+}
+
+.marigold {
+  background: var(--marigold);
+}
+
+.sage {
+  background: var(--sage);
+}
+
+.coral {
+  background: var(--coral);
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.card {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  align-content: start;
+  gap: var(--space-2xs);
+  padding: var(--space-m);
+  background: var(--surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+  transition: transform 0.3s var(--ease-bounce), box-shadow 0.3s var(--ease-out);
+
+  &:hover {
+    transform: translateY(-4px) rotate(-0.4deg);
+    box-shadow: var(--shadow-m);
+  }
+}
+
+.now {
+  justify-self: start;
+  padding: 0.1rem var(--space-xs);
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: var(--step--1);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  transform: rotate(-2deg);
+}
+
+.company {
+  font-size: var(--step-2);
+  line-height: 1.15;
+}
+
+.meta {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+
+.roles {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: var(--space-2xs) 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0 var(--space-s);
+  }
+}
+
+.roleTitle {
+  font-weight: 700;
+}
+
+.dates {
+  color: var(--accent-ink);
+  font-size: var(--step--1);
+  font-weight: 500;
+}
+
+.bullets {
+  display: grid;
+  gap: var(--space-xs);
+  margin: var(--space-xs) 0 0;
+  padding: 0 0 0 1.1rem;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  line-height: 1.55;
+
+  li::marker {
+    color: var(--marigold);
+  }
+}

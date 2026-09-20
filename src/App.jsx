@@ -1,5 +1,6 @@
 import Hero from './components/Hero/Hero.jsx';
 import About from './components/About/About.jsx';
+import Experience from './components/Experience/Experience.jsx';
 import ThemeToggle from './components/ThemeToggle/ThemeToggle.jsx';
 
 export default function App() {
@@ -12,7 +13,8 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
-        {/* Next: Experience, Skills, Projects, Off the clock, Contact */}
+        <Experience />
+        {/* Next: Skills, Projects, Off the clock, Contact */}
       </main>
     </>
   );
