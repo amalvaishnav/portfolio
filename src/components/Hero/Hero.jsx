@@ -1,4 +1,4 @@
-import { identity, links } from '../../data/content.js';
+import { identity, links, photos } from '../../data/content.js';
 import { GitHubIcon, LinkedInIcon, ArrowIcon } from '../Icons/Icons.jsx';
 import EmailReveal from '../EmailReveal/EmailReveal.jsx';
 import styles from './Hero.module.scss';
@@ -49,12 +49,22 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={styles.art} aria-hidden="true">
-          <span className={`${styles.shape} ${styles.sun}`} />
-          <span className={`${styles.shape} ${styles.arch}`} />
-          <span className={`${styles.shape} ${styles.blob}`} />
-          <span className={`${styles.shape} ${styles.pip}`} />
-          <span className={`${styles.shape} ${styles.ring}`} />
+        <div className={styles.art}>
+          <div className={styles.shapes} aria-hidden="true">
+            <span className={`${styles.shape} ${styles.sun}`} />
+            <span className={`${styles.shape} ${styles.blob}`} />
+            <span className={`${styles.shape} ${styles.pip}`} />
+            <span className={`${styles.shape} ${styles.ring}`} />
+          </div>
+          <img
+            className={styles.photo}
+            src={photos.hero.src}
+            alt={photos.hero.alt}
+            width={photos.hero.width}
+            height={photos.hero.height}
+            fetchpriority="high"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

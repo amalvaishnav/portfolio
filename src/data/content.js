@@ -16,6 +16,12 @@ export const identity = {
 };
 
 export const photos = {
+  hero: {
+    src: "/hero.jpg",
+    alt: "Amal smiling in sunglasses and a patterned shirt, with a misty lake behind.",
+    width: 640,
+    height: 821,
+  },
   about: {
     src: "/about-1.jpg",
     alt: "Amal smiling in a sunlit stone square, wearing sunglasses and a dark denim jacket.",
