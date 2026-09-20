@@ -1,5 +1,6 @@
 import { identity, links } from '../../data/content.js';
 import { GitHubIcon, LinkedInIcon, ArrowIcon } from '../Icons/Icons.jsx';
+import EmailReveal from '../EmailReveal/EmailReveal.jsx';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
@@ -27,7 +28,7 @@ export default function Hero() {
           <p className={styles.tagline}>{identity.tagline}</p>
 
           <div className={styles.actions}>
-            <a className={styles.cta} href={`mailto:${links.email}`}>
+            <a className={styles.cta} href="#contact">
               Say hello <ArrowIcon />
             </a>
             <ul className={styles.social}>
@@ -40,6 +41,9 @@ export default function Hero() {
                 <a href={links.linkedin} aria-label="Amal on LinkedIn" target="_blank" rel="noopener noreferrer">
                   <LinkedInIcon />
                 </a>
+              </li>
+              <li>
+                <EmailReveal />
               </li>
             </ul>
           </div>

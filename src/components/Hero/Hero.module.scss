@@ -164,16 +164,29 @@
 
 .social {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: var(--space-xs);
   margin: 0;
   padding: 0;
   list-style: none;
 
-  a {
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  a,
+  button {
     display: grid;
     place-items: center;
     width: 2.75rem;
     height: 2.75rem;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
     color: var(--ink);
     background: var(--surface);
     border-radius: var(--radius-pill);

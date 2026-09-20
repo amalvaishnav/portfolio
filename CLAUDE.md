@@ -28,7 +28,7 @@ Use ONLY the facts below. Do not invent projects, metrics, job responsibilities,
 - Role: Frontend Developer (Software Engineer) at United Wholesale Mortgage
 - Location (public): Metro Detroit, Michigan. Do NOT show a street address.
 - Links:
-  - Email: amal.vaishnav96@gmail.com (use a `mailto:` link, no form)
+  - Email: amal.vaishnav96@gmail.com (shown as plain text when an email icon is clicked or tapped. Never a `mailto:` link, since it opens the visitor's mail app. No form.)
   - GitHub: https://github.com/amalvaishnav
   - LinkedIn: https://www.linkedin.com/in/amalvaishnav
 

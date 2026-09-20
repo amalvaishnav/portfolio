@@ -21,3 +21,12 @@ export function ArrowIcon({ size = 20 }) {
     </svg>
   );
 }
+
+export function MailIcon({ size = 22 }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="14" rx="3" />
+      <path d="m4 8 8 6 8-6" />
+    </svg>
+  );
+}

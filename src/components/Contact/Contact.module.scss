@@ -75,36 +75,6 @@
   font-size: var(--step-1);
 }
 
-.email {
-  position: relative;
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-l);
-  background: var(--bg);
-  color: var(--ink);
-  font-size: var(--step-1);
-  font-weight: 700;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-m);
-  transition: transform 0.3s var(--ease-bounce);
-
-  svg {
-    transition: transform 0.3s var(--ease-bounce);
-  }
-
-  &:hover {
-    transform: translateY(-3px) rotate(-1deg);
-
-    svg {
-      transform: translateX(4px);
-    }
-  }
-}
-
 .social {
   position: relative;
   display: flex;
@@ -114,11 +84,16 @@
   padding: 0;
   list-style: none;
 
-  a {
+  a,
+  button {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2xs);
     padding: var(--space-2xs) var(--space-m);
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
     color: inherit;
     font-weight: 700;
     text-decoration: none;
@@ -133,6 +108,14 @@
       transform: translateY(-3px) rotate(2deg);
     }
   }
+}
+
+// The Email item can grow to hold the revealed address, and wraps on narrow screens
+.emailItem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 // Decorative circles, kept inside the panel so they never cause sideways scroll

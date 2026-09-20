@@ -1,0 +1,20 @@
+// The revealed address: plain, selectable text (one click or tap selects all of it)
+.address {
+  padding: var(--space-2xs) var(--space-s);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: var(--step-0);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  user-select: all;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-s);
+  animation: pop 0.35s var(--ease-bounce);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateX(-0.5rem);
+  }
+}

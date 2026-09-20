@@ -1,5 +1,6 @@
 import { links, testimonial } from '../../data/content.js';
-import { GitHubIcon, LinkedInIcon, ArrowIcon } from '../Icons/Icons.jsx';
+import { GitHubIcon, LinkedInIcon } from '../Icons/Icons.jsx';
+import EmailReveal from '../EmailReveal/EmailReveal.jsx';
 import styles from './Contact.module.scss';
 
 export default function Contact() {
@@ -25,11 +26,7 @@ export default function Contact() {
           <h2 id="contact-title" className={styles.title}>
             Let's say <em>hello</em>
           </h2>
-          <p className={styles.lead}>Email is the easiest way to reach me.</p>
-
-          <a className={styles.email} href={`mailto:${links.email}`}>
-            {links.email} <ArrowIcon />
-          </a>
+          <p className={styles.lead}>Email is the easiest way to reach me. Tap the envelope to see my address.</p>
 
           <ul className={styles.social}>
             <li>
@@ -41,6 +38,9 @@ export default function Contact() {
               <a href={links.linkedin} target="_blank" rel="noopener noreferrer">
                 <LinkedInIcon /> LinkedIn
               </a>
+            </li>
+            <li className={styles.emailItem}>
+              <EmailReveal label="Email" />
             </li>
           </ul>
         </div>
