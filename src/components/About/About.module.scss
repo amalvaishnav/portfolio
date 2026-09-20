@@ -1,0 +1,170 @@
+.about {
+  padding: var(--space-3xl) var(--gutter);
+  overflow-x: clip; // decorative shapes must never cause sideways scroll
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+
+  @media (min-width: 52rem) {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--space-2xl);
+  }
+
+  &[data-reveal='hidden'] {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+// Photo: arch frame, slightly tilted, with paper shapes peeking out behind
+.photo {
+  position: relative;
+  margin: 0;
+  width: min(100%, 20rem);
+  justify-self: center;
+  transform: rotate(-2deg);
+  transition: transform 0.5s var(--ease-bounce);
+
+  &:hover {
+    transform: rotate(1deg) scale(1.02);
+  }
+
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 440 / 579;
+    object-fit: cover;
+    border: 0.6rem solid var(--surface);
+    border-radius: 999px 999px var(--radius-m) var(--radius-m);
+    box-shadow: var(--shadow-m);
+    background: var(--surface-sunk);
+  }
+}
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  display: block;
+}
+
+.sun {
+  width: 55%;
+  aspect-ratio: 1;
+  right: -6%;
+  top: -6%;
+
+  @media (min-width: 40rem) {
+    right: -14%;
+  }
+  background: var(--marigold);
+  border-radius: 50%;
+}
+
+.sage {
+  width: 45%;
+  aspect-ratio: 1;
+  left: -6%;
+  bottom: -5%;
+
+  @media (min-width: 40rem) {
+    left: -12%;
+  }
+  background: var(--sage);
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-2xs);
+  color: var(--accent-ink);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--step-4);
+  letter-spacing: -0.01em;
+
+  em {
+    color: var(--accent-ink);
+  }
+}
+
+.bio {
+  display: grid;
+  gap: var(--space-s);
+  margin-top: var(--space-m);
+  max-width: 38rem;
+  color: var(--ink-soft);
+}
+
+.lead {
+  color: var(--ink);
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+.subhead {
+  margin-top: var(--space-xl);
+  font-size: var(--step-1);
+}
+
+.education {
+  display: grid;
+  gap: var(--space-s);
+  margin: var(--space-s) 0 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3xs);
+  padding: var(--space-m);
+  background: var(--surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+  transition: transform 0.3s var(--ease-bounce);
+
+  &:hover {
+    transform: translateY(-3px) rotate(-0.5deg);
+  }
+}
+
+.years {
+  justify-self: start;
+  padding: 0.1rem var(--space-xs);
+  background: var(--marigold);
+  color: #3b2a26; // fixed dark ink keeps AA contrast on marigold in both themes
+  font-size: var(--step--1);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+}
+
+.degree {
+  margin-top: var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.school {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  line-height: 1.4;
+}

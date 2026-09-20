@@ -15,6 +15,15 @@ export const identity = {
   ],
 };
 
+export const photos = {
+  about: {
+    src: "/about-1.jpg",
+    alt: "Amal smiling in a sunlit stone square, wearing sunglasses and a dark denim jacket.",
+    width: 440,
+    height: 579,
+  },
+};
+
 export const links = {
   email: "amal.vaishnav96@gmail.com",
   github: "https://github.com/amalvaishnav",

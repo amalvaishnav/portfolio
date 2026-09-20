@@ -1,4 +1,5 @@
 import Hero from './components/Hero/Hero.jsx';
+import About from './components/About/About.jsx';
 import ThemeToggle from './components/ThemeToggle/ThemeToggle.jsx';
 
 export default function App() {
@@ -10,7 +11,8 @@ export default function App() {
       <ThemeToggle />
       <main id="main">
         <Hero />
-        {/* Next: About, Experience, Skills, Projects, Off the clock, Contact */}
+        <About />
+        {/* Next: Experience, Skills, Projects, Off the clock, Contact */}
       </main>
     </>
   );
