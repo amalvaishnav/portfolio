@@ -2,40 +2,51 @@
 
 @mixin light-palette {
   color-scheme: light;
-  --bg: #fbf3e4; // warm cream paper
-  --surface: #fff9ee;
-  --surface-sunk: #f4e8d2;
-  --ink: #3b2a26; // deep warm brown
-  --ink-soft: #6b5148; // 6:1 on --bg
-  --line: #e2d3b8;
-  --accent: #b44a2b; // terracotta, 5:1 with --on-accent
-  --on-accent: #fff9ee;
-  --accent-ink: #a23f22; // accent used as text on --bg
-  --marigold: #e9a527;
-  --sage: #7fa596;
-  --berry: #a63a5b;
-  --coral: #ef7f68;
-  --shadow-color: 24 18% 20%;
-  --grain-opacity: 0.35;
+  --bg: #ffffff; // white
+  --surface: #f1faf9;
+  --surface-sunk: #e0f4f1;
+  --ink: #0b2b2a; // deep teal-black
+  --ink-soft: #3f5f5d; // 6.5:1 on --bg
+  --line: #cfe6e3;
+  --accent: #0f766e; // teal, 5.5:1 with --on-accent
+  --on-accent: #ffffff;
+  --accent-ink: #0f766e; // accent used as text on --bg
+  --turquoise: #2dd4bf;
+  --teal: #14b8a6;
+  --aqua: #99f6e4;
+  --deep: #115e59;
+  // Hero art shapes, tuned per theme so they stay distinct
+  --art-sun: #2dd4bf;
+  --art-arch: #0f766e;
+  --art-blob: #99f6e4;
+  --art-pip: #115e59;
+  --art-ring: #14b8a6;
+  --shadow-color: 175 35% 14%;
+  --grain-opacity: 0.22;
 }
 
 @mixin dark-palette {
   color-scheme: dark;
-  --bg: #241a22; // aubergine charcoal
-  --surface: #2f232d;
-  --surface-sunk: #1c141b;
-  --ink: #f5e9d5;
-  --ink-soft: #cdbba8; // 8:1 on --bg
-  --line: #4a3a47;
-  --accent: #f0906b; // lightened terracotta
-  --on-accent: #241a22;
-  --accent-ink: #f0906b;
-  --marigold: #f2b84b;
-  --sage: #8fc0ae;
-  --berry: #d9799a;
-  --coral: #f59a85;
-  --shadow-color: 300 30% 4%;
-  --grain-opacity: 0.18;
+  --bg: #050b0b; // near black
+  --surface: #0e1918;
+  --surface-sunk: #000000;
+  --ink: #e6fbf8;
+  --ink-soft: #9fcfca; // 11:1 on --bg
+  --line: #1f3b39;
+  --accent: #2dd4bf; // turquoise
+  --on-accent: #04201d;
+  --accent-ink: #2dd4bf;
+  --turquoise: #2dd4bf;
+  --teal: #14b8a6;
+  --aqua: #5eead4;
+  --deep: #0f766e;
+  --art-sun: #14b8a6;
+  --art-arch: #2dd4bf;
+  --art-blob: #0f766e;
+  --art-pip: #99f6e4;
+  --art-ring: #5eead4;
+  --shadow-color: 175 60% 1%;
+  --grain-opacity: 0.12;
 }
 
 :root {

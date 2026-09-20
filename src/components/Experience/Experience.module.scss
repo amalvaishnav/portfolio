@@ -116,7 +116,7 @@
   border-radius: 50%;
   border: 0.2rem solid var(--bg);
   box-shadow: var(--shadow-m);
-  color: #3b2a26; // fixed dark ink keeps AA contrast on the light token colors
+  color: #062321; // fixed dark ink keeps AA contrast on the light token colors
   font-family: var(--font-display);
   font-size: var(--step-1);
   font-weight: 700;
@@ -127,16 +127,16 @@
   }
 }
 
-.marigold {
-  background: var(--marigold);
+.turquoise {
+  background: var(--turquoise);
 }
 
-.sage {
-  background: var(--sage);
+.aqua {
+  background: var(--aqua);
 }
 
-.coral {
-  background: var(--coral);
+.teal {
+  background: var(--teal);
 }
 
 .accent {
@@ -219,6 +219,6 @@
   line-height: 1.55;
 
   li::marker {
-    color: var(--marigold);
+    color: var(--teal);
   }
 }

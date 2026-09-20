@@ -2,7 +2,7 @@ import { experience } from '../../data/content.js';
 import useReveal from '../../hooks/useReveal.js';
 import styles from './Experience.module.scss';
 
-const TONES = ['marigold', 'sage', 'coral'];
+const TONES = ['turquoise', 'aqua', 'teal'];
 
 function Stop({ item, index, isLast }) {
   const ref = useReveal();

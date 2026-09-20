@@ -51,8 +51,8 @@
   gap: var(--space-2xs);
   align-items: center;
   padding: var(--space-2xs) var(--space-s);
-  background: var(--marigold);
-  color: #3b2a26; // fixed dark ink: 8:1 on marigold in both themes
+  background: var(--turquoise);
+  color: #062321; // fixed dark ink: 9:1 on turquoise in both themes
   font-size: var(--step--1);
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -91,7 +91,7 @@
   height: 0.28em;
   overflow: visible;
   fill: none;
-  stroke: var(--marigold);
+  stroke: var(--teal);
   stroke-width: 5;
   stroke-linecap: round;
 
@@ -215,14 +215,14 @@
 
 .sun {
   inset: 6% 24% 46% 10%;
-  background: var(--marigold);
+  background: var(--art-sun);
   border-radius: 50%;
   box-shadow: var(--shadow-m);
 }
 
 .arch {
   inset: 34% 8% 8% 40%;
-  background: var(--accent);
+  background: var(--art-arch);
   border-radius: 999px 999px var(--radius-m) var(--radius-m);
   box-shadow: var(--shadow-m);
   animation-delay: -2s;
@@ -230,7 +230,7 @@
 
 .blob {
   inset: 52% 50% 4% 6%;
-  background: var(--sage);
+  background: var(--art-blob);
   border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
   animation-delay: -4s;
 }
@@ -239,7 +239,7 @@
   inset: 14% 10% auto auto;
   width: 14%;
   aspect-ratio: 1;
-  background: var(--berry);
+  background: var(--art-pip);
   border-radius: 50%;
   animation-delay: -1s;
 }
@@ -248,7 +248,7 @@
   inset: auto auto 2% 44%;
   width: 18%;
   aspect-ratio: 1;
-  border: 0.45rem solid var(--coral);
+  border: 0.45rem solid var(--art-ring);
   border-radius: 50%;
   animation-delay: -3s;
 }

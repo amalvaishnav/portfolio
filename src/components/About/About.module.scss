@@ -64,11 +64,11 @@
   @media (min-width: 40rem) {
     right: -14%;
   }
-  background: var(--marigold);
+  background: var(--turquoise);
   border-radius: 50%;
 }
 
-.sage {
+.aqua {
   width: 45%;
   aspect-ratio: 1;
   left: -6%;
@@ -77,7 +77,7 @@
   @media (min-width: 40rem) {
     left: -12%;
   }
-  background: var(--sage);
+  background: var(--aqua);
   border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
 }
 
@@ -148,8 +148,8 @@
 .years {
   justify-self: start;
   padding: 0.1rem var(--space-xs);
-  background: var(--marigold);
-  color: #3b2a26; // fixed dark ink keeps AA contrast on marigold in both themes
+  background: var(--turquoise);
+  color: #062321; // fixed dark ink keeps AA contrast on turquoise in both themes
   font-size: var(--step--1);
   font-weight: 700;
   border-radius: var(--radius-pill);

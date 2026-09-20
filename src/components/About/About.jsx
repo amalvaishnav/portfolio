@@ -12,7 +12,7 @@ export default function About() {
       <div className={styles.inner} ref={ref}>
         <figure className={styles.photo}>
           <span className={`${styles.shape} ${styles.sun}`} aria-hidden="true" />
-          <span className={`${styles.shape} ${styles.sage}`} aria-hidden="true" />
+          <span className={`${styles.shape} ${styles.aqua}`} aria-hidden="true" />
           <img
             src={photo.src}
             alt={photo.alt}
