@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amal Vaishnav · Frontend Developer</title>
+    <meta
+      name="description"
+      content="Amal Vaishnav is a frontend developer in Metro Detroit, Michigan. Portfolio, experience and ways to say hello."
+    />
+    <meta name="theme-color" content="#fbf3e4" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amal Vaishnav · Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend developer in Metro Detroit. Portfolio, experience and ways to say hello."
+    />
+    <meta property="og:url" content="https://amalvaishnav.pages.dev/" />
+    <!-- TODO: add og:image / twitter:image once the 1200x630 card is designed. -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Amal Vaishnav · Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend developer in Metro Detroit. Portfolio, experience and ways to say hello."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,500..800,100;1,9..144,500..800,100&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Apply a saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

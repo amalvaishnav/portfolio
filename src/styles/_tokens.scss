@@ -1,0 +1,93 @@
+// Design tokens. Colors change per theme; everything else is shared.
+
+@mixin light-palette {
+  color-scheme: light;
+  --bg: #fbf3e4; // warm cream paper
+  --surface: #fff9ee;
+  --surface-sunk: #f4e8d2;
+  --ink: #3b2a26; // deep warm brown
+  --ink-soft: #6b5148; // 6:1 on --bg
+  --line: #e2d3b8;
+  --accent: #b44a2b; // terracotta, 5:1 with --on-accent
+  --on-accent: #fff9ee;
+  --accent-ink: #a23f22; // accent used as text on --bg
+  --marigold: #e9a527;
+  --sage: #7fa596;
+  --berry: #a63a5b;
+  --coral: #ef7f68;
+  --shadow-color: 24 18% 20%;
+  --grain-opacity: 0.35;
+}
+
+@mixin dark-palette {
+  color-scheme: dark;
+  --bg: #241a22; // aubergine charcoal
+  --surface: #2f232d;
+  --surface-sunk: #1c141b;
+  --ink: #f5e9d5;
+  --ink-soft: #cdbba8; // 8:1 on --bg
+  --line: #4a3a47;
+  --accent: #f0906b; // lightened terracotta
+  --on-accent: #241a22;
+  --accent-ink: #f0906b;
+  --marigold: #f2b84b;
+  --sage: #8fc0ae;
+  --berry: #d9799a;
+  --coral: #f59a85;
+  --shadow-color: 300 30% 4%;
+  --grain-opacity: 0.18;
+}
+
+:root {
+  @include light-palette;
+
+  // Type: fluid scale (roughly 1.25 ratio), 360px to 1280px viewports
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.4rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.75rem);
+  --step-3: clamp(1.75rem, 1.5rem + 1.2vw, 2.4rem);
+  --step-4: clamp(2.2rem, 1.7rem + 2.4vw, 3.6rem);
+  --step-5: clamp(2.9rem, 1.9rem + 5vw, 6rem);
+
+  // Spacing
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+
+  // Radii
+  --radius-s: 0.6rem;
+  --radius-m: 1.1rem;
+  --radius-l: 1.75rem;
+  --radius-pill: 999px;
+
+  // Soft shadows
+  --shadow-s: 0 1px 2px hsl(var(--shadow-color) / 0.1), 0 2px 6px hsl(var(--shadow-color) / 0.08);
+  --shadow-m: 0 2px 4px hsl(var(--shadow-color) / 0.08), 0 8px 24px hsl(var(--shadow-color) / 0.14);
+
+  // Motion
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --content-width: 68rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+// Follow the OS unless the user picked a theme with the toggle.
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-palette;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include dark-palette;
+}

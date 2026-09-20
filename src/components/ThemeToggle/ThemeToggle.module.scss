@@ -1,0 +1,60 @@
+.toggle {
+  position: fixed;
+  top: var(--space-s);
+  right: var(--space-s);
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-s);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-bounce), background-color 0.4s var(--ease-out);
+
+  &:hover {
+    transform: rotate(-12deg) scale(1.08);
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+
+  svg {
+    overflow: visible;
+  }
+}
+
+// Sun and moon morph: the "bite" slides in to make a crescent, rays fold away.
+.body {
+  transform-origin: center;
+  transition: transform 0.5s var(--ease-bounce);
+}
+
+.bite {
+  transform: translate(0, 0);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.rays {
+  transform-origin: center;
+  transition: transform 0.5s var(--ease-out), opacity 0.3s;
+}
+
+.toggle[data-dark='true'] {
+  .bite {
+    transform: translate(-9px, 2px);
+  }
+
+  .body {
+    transform: scale(1.15) rotate(-20deg);
+  }
+
+  .rays {
+    transform: rotate(60deg) scale(0.4);
+    opacity: 0;
+  }
+}
