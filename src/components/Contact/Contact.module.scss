@@ -1,0 +1,161 @@
+@use '../../styles/mixins' as *;
+
+.quoteSection {
+  padding: var(--space-2xl) var(--gutter) 0;
+}
+
+.quote {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+
+  blockquote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--step-3);
+    font-weight: 500;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  figcaption {
+    margin-top: var(--space-s);
+    font-weight: 700;
+
+    span {
+      color: var(--ink-soft);
+      font-weight: 400;
+    }
+  }
+}
+
+.contact {
+  padding: var(--space-3xl) var(--gutter) var(--space-2xl);
+}
+
+// A big colored panel: teal in light mode, turquoise in dark mode
+.panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  justify-items: start;
+  gap: var(--space-m);
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-l);
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-m);
+
+  @media (min-width: 40rem) {
+    padding: var(--space-2xl);
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+  margin: 0;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.title {
+  position: relative;
+  font-size: var(--step-5);
+  letter-spacing: -0.02em;
+
+  em {
+    font-style: italic;
+  }
+}
+
+.lead {
+  position: relative;
+  font-size: var(--step-1);
+}
+
+.email {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-l);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: var(--step-1);
+  font-weight: 700;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-m);
+  transition: transform 0.3s var(--ease-bounce);
+
+  svg {
+    transition: transform 0.3s var(--ease-bounce);
+  }
+
+  &:hover {
+    transform: translateY(-3px) rotate(-1deg);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.social {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-2xs) var(--space-m);
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    outline: 2px solid currentColor;
+    outline-offset: -2px;
+    transition: transform 0.3s var(--ease-bounce), background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background: var(--bg);
+      color: var(--ink);
+      transform: translateY(-3px) rotate(2deg);
+    }
+  }
+}
+
+// Decorative circles, kept inside the panel so they never cause sideways scroll
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.one {
+  width: 16rem;
+  height: 16rem;
+  right: -5rem;
+  top: -6rem;
+  background: var(--turquoise);
+  opacity: 0.35;
+}
+
+.two {
+  width: 9rem;
+  height: 9rem;
+  right: 4rem;
+  bottom: -4rem;
+  border: 1.4rem solid var(--aqua);
+  opacity: 0.4;
+}

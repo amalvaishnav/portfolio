@@ -7,12 +7,12 @@ Project brief for Claude Code. Read this fully before writing any code.
 A single-page personal portfolio for Amal Vaishnav, a frontend engineer. It should feel professional, but also warm, playful and artistic, and show real UX craft (modern, 2026-era). A recruiter should trust it in five seconds; a friend should smile at it.
 
 - Live URL (target): `amalvaishnav.pages.dev`
-- Repo: `amalvaishnav/amal-portfolio` (public)
+- Repo: `amalvaishnav/portfolio` (public)
 - Hosting: Cloudflare Pages, auto-deploys on push to `main`
 
 ## Stack (keep it simple)
 
-- Vite + React (JavaScript or TypeScript, your call, but be consistent)
+- Vite + React (JavaScript, kept consistent). Vite is pinned to v4 because the dev machine runs Node 16; upgrade Node before moving to a newer Vite.
 - Sass (`.scss`) for styling, with design tokens as CSS custom properties
 - Static build only: no backend, no CMS, no database, no forms service
 - Build: `npm run build`, output directory: `dist`
@@ -92,12 +92,12 @@ Keep content in a single data file (e.g. `src/data/content.js`) so Amal can edit
 
 ## Design direction
 
-**Feeling:** warm, cozy, playful, artistic, and clearly professional. Think a well-designed indie studio site, not a template. Crafted, human, a little surprising.
+**Feeling:** fresh, friendly, playful, artistic, and clearly professional. Think a well-designed indie studio site, not a template. Crafted, human, a little surprising.
 
 **Color (define as CSS custom properties, both light and dark themes):**
-- Base: warm cream / paper (not pure white). Dark mode: deep warm charcoal or aubergine (not pure black).
-- Ink: deep warm brown or plum for text.
-- Accents: terracotta, marigold/saffron, soft teal or sage, a touch of coral or berry. Use a small, consistent palette.
+- Light mode: white base, deep teal-black ink, teal (`#0f766e`) for buttons and links, turquoise (`#2dd4bf`) and aqua (`#99f6e4`) for decorative fills.
+- Dark mode: near-black base (`#050b0b`), mint-white ink, bright turquoise for buttons and links, teal shades for decoration.
+- Teal, turquoise and aqua only; no warm accent colors. Define everything as tokens in `src/styles/_tokens.scss`.
 - Every text/background pair must meet WCAG AA contrast.
 
 **Typography:**
@@ -119,7 +119,7 @@ Keep content in a single data file (e.g. `src/data/content.js`) so Amal can edit
 - **Mobile-first.** Must look great from 360px wide up. No horizontal scroll.
 - **Accessibility:** semantic HTML landmarks, one `h1`, logical heading order, visible focus states, keyboard-usable everything, alt text, `aria-label`s on icon links, skip-to-content link.
 - **Performance:** target Lighthouse 95+ in all categories. Optimize images (WebP/AVIF, sized properly), lazy-load below the fold, no layout shift.
-- **SEO and sharing:** proper `<title>`, meta description, Open Graph and Twitter tags, favicon, `robots.txt`. Add an OG image (a simple designed 1200x630 card) as a later task.
+- **SEO and sharing:** proper `<title>`, meta description, Open Graph tags, favicon, `robots.txt`, and the 1200x630 share card (`public/og-image.jpg`). No Twitter-specific tags, by Amal's choice.
 - **Themes:** respect `prefers-color-scheme` by default, plus a manual toggle that persists (localStorage is fine for a static site).
 - **No secrets** in the repo (it is public). No analytics or tracking scripts for now.
 
@@ -129,7 +129,7 @@ Keep content in a single data file (e.g. `src/data/content.js`) so Amal can edit
 - Run the dev server (`npm run dev`) and check the result at mobile and desktop widths before moving on.
 - Keep components small and readable. Style with Sass modules or well-named partials plus design tokens; no inline style sprawl.
 - Ask before adding any new dependency.
-- If a design decision is ambiguous, pick the warmer, more playful option and note it in the commit message.
+- If a design decision is ambiguous, pick the friendlier, more playful option and note it in the commit message.
 - Do not rewrite Amal's facts. If unsure about a fact, leave a `TODO:` comment.
 
 ## Deployment notes
@@ -138,10 +138,23 @@ Keep content in a single data file (e.g. `src/data/content.js`) so Amal can edit
 - If Pages is unavailable in the dashboard, fall back to Workers with static assets: add a `wrangler.jsonc` pointing assets at `./dist`.
 - Since this is a single-page site with anchor links, no client-side router is needed. Avoid one unless necessary.
 
-## First task
+## Status
 
-1. Scaffold the Vite + React + Sass project in this repo (keep the existing README, LICENSE and .gitignore).
-2. Set up design tokens (colors, type scale, spacing, radii), light and dark themes, and the fonts.
-3. Create `src/data/content.js` with the content above.
-4. Build the Hero section, run it, and commit.
-5. Stop and show Amal before continuing to the next section.
+**Done**
+- Vite + React + Sass scaffold, design tokens, light and dark themes with a persistent toggle, fonts.
+- All seven sections: Hero, About, Experience (winding trail), Skills, Projects (placeholder), Off the clock (game shelf and dice), Contact, plus a footer.
+- SEO basics: title, description, Open Graph tags, favicon, `robots.txt`, 1200x630 share card.
+- Content lives in `src/data/content.js`.
+
+**Waiting on Amal**
+- Add real projects to `projects` in `src/data/content.js`.
+- Ask Cass Baltz if the testimonial can be shown, then set `testimonial.approved` to `true`.
+- Add a location for the UNC teaching assistant role, or leave it off.
+- Decide whether the gym gets its own card in Off the clock.
+- Connect the GitHub repo to Cloudflare Pages (build `npm run build`, output `dist`).
+
+**Still to do**
+- Measure Lighthouse and fix anything under 95.
+- Convert photos to WebP/AVIF; `public/profile_pic-2.jpg` (734 KB) is only used for the share card and can be removed from `public/` once that is not needed.
+- Verify every text/background pair meets WCAG AA with a contrast checker.
+- Optional: small nav bar, custom cursor.

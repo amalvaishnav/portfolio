@@ -157,7 +157,8 @@ export const skills = [
 ];
 
 export const testimonial = {
-  // TODO: confirm Cass Baltz is OK with this being shown before launch.
+  // TODO: confirm Cass Baltz is OK with this being shown, then set approved to true.
+  approved: false,
   quote:
     "Great to work with, with an excellent attitude, and always willing to take on extra work and help teammates.",
   name: "Cass Baltz",
@@ -165,9 +166,26 @@ export const testimonial = {
 };
 
 export const offTheClock = {
-  sports: ["Volleyball", "Pickleball", "Cricket", "Soccer"],
-  games: ["Board games"],
+  items: [
+    { id: "volleyball", label: "Volleyball", emoji: "🏐" },
+    { id: "pickleball", label: "Pickleball", emoji: "🏓" },
+    { id: "cricket", label: "Cricket", emoji: "🏏" },
+    { id: "soccer", label: "Soccer", emoji: "⚽" },
+    { id: "board-games", label: "Board games", emoji: "🎲" },
+  ],
 };
+
+// Shown when the dice is rolled. Only facts already on this page.
+export const funFacts = [
+  "I play volleyball, pickleball, cricket and soccer.",
+  "I love a good board game.",
+  "The gym is where I find my calm.",
+  "My first internship was in data mining, back in 2017.",
+  "I once built a tool that predicts Tokyo Stock Exchange prices with machine learning and NLP.",
+  "At NextGen Healthcare I built the front end of the Medfusion Administration tool with React, Redux and Sass.",
+  "I spent a semester as a teaching assistant in the math department at UNC Charlotte.",
+  "I studied computer engineering in Gujarat and computer science in Charlotte.",
+];
 
 export const projects = [
   // TODO: Amal to add real projects. Each project is one object, for example:

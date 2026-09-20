@@ -1,0 +1,18 @@
+// Shared section heading styles
+@mixin eyebrow {
+  margin-bottom: var(--space-2xs);
+  color: var(--accent-ink);
+  font-size: var(--step--1);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@mixin section-title {
+  font-size: var(--step-4);
+  letter-spacing: -0.01em;
+
+  em {
+    color: var(--accent-ink);
+  }
+}
